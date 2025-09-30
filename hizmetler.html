@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Koca Mobil Asansör - Ev eşyası, inşaat malzemesi, moloz taşıma hizmetleri. 200kg kapasiteyle 10. kata kadar güvenli taşımacılık">
+    <meta name="keywords" content="mobil asansör, eşya taşıma, inşaat malzemesi çıkarma, moloz indirme, çatı malzemesi, güvenli taşımacılık">
+    <title>Hizmetler & Fiyatlandırma - Koca Mobil Asansör</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* CSS Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: #444444;
+            background-color: #F7F7F7;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #0077FF;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #444444;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: #0077FF;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #FF9900;
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after,
+        .nav-menu a.active::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #0077FF;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0077FF 0%, #004CB3 100%);
+            color: white;
+            padding: 150px 0 100px;
+            margin-top: 80px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            min-height: 400px;
+        }
+
+        .hero-text {
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero-text h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            text-align: left;
+        }
+
+        .hero-text p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-image img {
+            max-width: 130%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            transform: translateX(100px);
+            opacity: 0;
+            animation: slideInRight 1s ease-out 0.5s forwards;
+        }
+
+        @keyframes slideInRight {
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .hero-text h1,
+        .hero-text p {
+            transform: translateX(-50px);
+            opacity: 0;
+            animation: slideInLeft 0.8s ease-out forwards;
+        }
+
+        .hero-text p {
+            animation-delay: 0.3s;
+        }
+
+        @keyframes slideInLeft {
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 60px 0;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        .section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #0077FF;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #FF9900;
+            border-radius: 2px;
+        }
+
+        /* Service Introduction */
+        .service-intro {
+            background: white;
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .service-intro p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #444444;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Technical Specs */
+        .tech-specs {
+            background: linear-gradient(135deg, #0077FF 0%, #004CB3 100%);
+            color: white;
+            padding: 60px 0;
+            border-radius: 15px;
+            margin-bottom: 60px;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .spec-item {
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .spec-item i {
+            font-size: 3rem;
+            color: #FF9900;
+            margin-bottom: 1rem;
+        }
+
+        .spec-item h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .spec-item p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Equipment Image Section */
+        .equipment-image {
+            background: white;
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .equipment-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #FF9900, #0077FF);
+            transition: left 0.3s ease;
+        }
+
+        .service-card:hover::before {
+            left: 0;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .service-card i {
+            font-size: 3.5rem;
+            color: #0077FF;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover i {
+            color: #FF9900;
+            transform: scale(1.1);
+        }
+
+        .service-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #0077FF;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        .service-card ul {
+            list-style: none;
+            margin-top: 1rem;
+            text-align: left;
+        }
+
+        .service-card ul li {
+            padding: 0.3rem 0;
+            color: #666;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .service-card ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #FF9900;
+            font-weight: bold;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: white;
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #FF9900;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 153, 0, 0.3);
+            margin: 0.5rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 153, 0, 0.4);
+        }
+
+        .cta-button[style*="background: #25D366"]:hover {
+            background: #1DA851 !important;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: #444444;
+            color: white;
+            text-align: center;
+            padding: 3rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #0077FF;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .footer-section a:hover {
+            color: #FF9900;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #666;
+            padding-top: 1rem;
+            margin-top: 2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 1rem 0;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .hero-text {
+                order: 1;
+            }
+
+            .hero-image {
+                order: 2;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+                text-align: center;
+            }
+
+            .hero-text p {
+                font-size: 1.1rem;
+                text-align: center;
+            }
+
+            .hero-image img {
+                animation: slideInUp 1s ease-out 0.5s forwards;
+            }
+
+            @keyframes slideInUp {
+                from {
+                    transform: translateY(50px);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+
+            .specs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-intro,
+            .service-card,
+            .cta-section,
+            .equipment-image {
+                padding: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            .service-intro,
+            .service-card,
+            .cta-section,
+            .equipment-image {
+                padding: 1.5rem;
+            }
+
+            .hero-content {
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Koca Mobil Asansör Logo">
+                KOCA MOBİL ASANSÖR
+            </a>
+            <button class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                <li><a href="hizmetler.html" class="active">Hizmetler</a></li>
+                <li><a href="galeri.html">Galeri</a></li>
+                <li><a href="sss-iletisim.html">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Hizmetler & Fiyatlandırma</h1>
+                    <p>Mobil asansörümüzle her türlü taşıma ihtiyacınıza profesyonel çözüm</p>
+                </div>
+                <div class="hero-image">
+                    <img src="64.jpg" alt="Koca Mobil Asansör Hizmetleri">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            
+            <!-- Service Introduction -->
+            <section class="service-intro">
+                <p>
+                    Mobil asansörlerimizle işlerinizi daha hızlı, güvenli ve kolay hâle getirin. 
+                    İnşaat sektöründe katlar arasında malzeme ve ekipman taşımak artık zahmetsiz. 
+                    Depolarda yüksek raflara ulaşmak ve ağır yükleri kaldırmak pratikleşiyor. 
+                    Mobil asansör hizmetiyle eşyalarınızı zahmetsizce taşıyarak işinizi kolaylaştırıyoruz.
+                </p>
+            </section>
+
+            <!-- Technical Specifications -->
+            <section class="tech-specs">
+                <div class="container">
+                    <div class="specs-grid">
+                        <div class="spec-item">
+                            <i class="fas fa-weight-hanging"></i>
+                            <h3>200 KG</h3>
+                            <p>Maksimum Yük Kapasitesi</p>
+                        </div>
+                        
+                        <div class="spec-item">
+                            <i class="fas fa-arrows-alt-v"></i>
+                            <h3>33 Metre</h3>
+                            <p>Maksimum Yükseklik</p>
+                        </div>
+                        
+                        <div class="spec-item">
+                            <i class="fas fa-building"></i>
+                            <h3>10. Kata</h3>
+                            <p>Güvenli Taşıma Kapasitesi</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Equipment Image -->
+            <section class="equipment-image">
+                <img src="64.jpg" alt="Koca Mobil Asansör - Ekipman Görseli">
+            </section>
+
+            <!-- Services -->
+            <section class="section">
+                <h2>Hizmet Alanlarımız</h2>
+                <div class="services-grid">
+                    
+                    <div class="service-card">
+                        <i class="fas fa-home"></i>
+                        <h3>Ev/Ofis Eşyası Taşıma</h3>
+                        <p>Nakliye sürecinde ağır eşyalarınızı güvenle üst katlara çıkarıyoruz.</p>
+                        <ul>
+                            <li>Beyaz eşya (buzdolabı, çamaşır makinesi)</li>
+                            <li>Mobilyalar (koltuk takımı, dolap, yatak)</li>
+                            <li>Ofis ekipmanları</li>
+                            <li>Elektronik eşyalar</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <i class="fas fa-hard-hat"></i>
+                        <h3>İnşaat Malzemesi Çıkarma</h3>
+                        <p>İnşaat projelerinizde malzemelerinizi hızla üst katlara taşıyoruz.</p>
+                        <ul>
+                            <li>Cam ve PVC malzemeleri</li>
+                            <li>Çimento ve harç torbaları</li>
+                            <li>Fayans ve seramik</li>
+                            <li>Demir ve metal malzemeler</li>
+                            <li>İnşaat aletleri ve ekipmanları</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <i class="fas fa-trash-alt"></i>
+                        <h3>Moloz ve Atık İndirme</h3>
+                        <p>Renovasyon ve yıkım işlerinde molozları güvenle aşağı indiriyoruz.</p>
+                        <ul>
+                            <li>İnşaat molozları</li>
+                            <li>Eski mobilyalar</li>
+                            <li>Hafriyat malzemeleri</li>
+                            <li>Ağır atık eşyalar</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <i class="fas fa-warehouse"></i>
+                        <h3>Çatı ve Yapı Malzemeleri</h3>
+                        <p>Çatı işleri ve yüksek yapılar için malzeme taşımacılığı.</p>
+                        <ul>
+                            <li>Çatı kiremitleri</li>
+                            <li>İzolasyon malzemeleri</li>
+                            <li>Ahşap ve kereste</li>
+                            <li>Çatı aksesuarları</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <i class="fas fa-boxes"></i>
+                        <h3>Depo ve Antrepo Hizmetleri</h3>
+                        <p>Yüksek raflara mal yerleştirme ve depo düzenleme işleri.</p>
+                        <ul>
+                            <li>Palet taşıma</li>
+                            <li>Ağır kutu ve koliler</li>
+                            <li>Depo ekipmanları</li>
+                            <li>Endüstriyel malzemeler</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <i class="fas fa-tools"></i>
+                        <h3>Özel Projeler</h3>
+                        <p>Standart taşıma dışında özel ihtiyaçlarınız için çözümler.</p>
+                        <ul>
+                            <li>Ağır makineler</li>
+                            <li>Sanat eserleri</li>
+                            <li>Hassas ekipmanlar</li>
+                            <li>Özel boyutlu eşyalar</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- CTA Section - Fiyatlandırma -->
+            <section class="cta-section">
+                <h3 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; color: #0077FF; margin-bottom: 1rem;">
+                    Ağır Eşyalarınızı Güvenle Taşıyalım
+                </h3>
+                <p style="font-size: 1.1rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Nakliye sürecinizde mobil asansör desteği almak için hemen iletişime geçin. 
+                    Ücretsiz fiyat teklifi ve randevu için bizi arayabilirsiniz.
+                </p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+                    <a href="tel:+905XXXXXXXXX" class="cta-button">
+                        <i class="fas fa-phone"></i> Hemen Ara: 0XXX XXX XX XX
+                    </a>
+                    <a href="https://wa.me/905XXXXXXXXX?text=Merhaba, mobil asansör hizmeti hakkında bilgi almak istiyorum." class="cta-button" style="background: #25D366;">
+                        <i class="fab fa-whatsapp"></i> WhatsApp ile Yaz
+                    </a>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>İletişim</h3>
+                    <p><i class="fas fa-phone"></i> +90 XXX XXX XX XX</p>
+                    <p><i class="fas fa-envelope"></i> info@kocamobilasansor.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Adres Bilgisi</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Hizmetlerimiz</h3>
+                    <a href="#ev-esyasi">Ev/Ofis Eşyası Taşıma</a>
+                    <a href="#insaat">İnşaat Malzemesi</a>
+                    <a href="#moloz">Moloz İndirme</a>
+                    <a href="#cati">Çatı Malzemeleri</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Sosyal Medya</h3>
+                    <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+                    <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Koca Mobil Asansör. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'white';
+                header.style.backdropFilter = 'none';
+            }
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navMenu = document.getElementById('navMenu');
+            const menuToggle = document.querySelector('.menu-toggle');
+            
+            if (!navMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // Animation for cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.service-intro, .spec-item, .service-card, .cta-section, .equipment-image');
+            animatedElements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>

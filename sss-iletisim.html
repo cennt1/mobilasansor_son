@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Koca Mobil Asansör - Sık sorulan sorular ve iletişim bilgileri. Mobil asansör kiralama hakkında merak ettikleriniz">
+    <meta name="keywords" content="Denizli mobil asansör,denizli, denizli asansör kiralama,denizli evden eve asansör, kiralık mobil asansör,mobil asansör sss, iletişim, kiralama, fiyat, güvenlik, hava koşulları">
+    <title>SSS & İletişim - Koca Mobil Asansör</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* CSS Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: #444444;
+            background-color: #F7F7F7;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation - Aynı düzen */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #0077FF;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #444444;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: #0077FF;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #FF9900;
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after,
+        .nav-menu a.active::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #0077FF;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0077FF 0%, #004CB3 100%);
+            color: white;
+            text-align: center;
+            padding: 150px 0 100px;
+            margin-top: 80px;
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 60px 0;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        .section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #0077FF;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #FF9900;
+            border-radius: 2px;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            background: white;
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 60px;
+        }
+
+        .faq-item {
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border-radius: 10px;
+            background: #F7F7F7;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            background: #0077FF;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 119, 255, 0.2);
+        }
+
+        .faq-item h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #0077FF;
+            margin-bottom: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .faq-item:hover h3 {
+            color: white;
+        }
+
+        .faq-item p {
+            color: #666;
+            line-height: 1.7;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .faq-item:hover p {
+            color: white;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 60px;
+        }
+
+        .contact-info {
+            background: white;
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .contact-info h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #0077FF;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            border-radius: 10px;
+            background: #F7F7F7;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: #0077FF;
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: #FF9900;
+            margin-right: 1rem;
+            min-width: 30px;
+        }
+
+        .contact-item:hover i {
+            color: white;
+        }
+
+        .contact-item div h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-item div p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .contact-form {
+            background: white;
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .contact-form h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #0077FF;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: #444444;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #eee;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: 'Open Sans', sans-serif;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #0077FF;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-submit {
+            background: #FF9900;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 153, 0, 0.3);
+        }
+
+        .form-submit:hover {
+            background: #E6890A;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 153, 0, 0.4);
+        }
+
+        /* Quick Contact Buttons */
+        .quick-contact {
+            background: white;
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .quick-contact h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            color: #0077FF;
+            margin-bottom: 1rem;
+        }
+
+        .quick-contact p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #666;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #FF9900;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 153, 0, 0.3);
+            margin: 0.5rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 153, 0, 0.4);
+        }
+
+        .cta-button[style*="background: #25D366"]:hover {
+            background: #1DA851 !important;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: #444444;
+            color: white;
+            text-align: center;
+            padding: 3rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #0077FF;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .footer-section a:hover {
+            color: #FF9900;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #666;
+            padding-top: 1rem;
+            margin-top: 2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 1rem 0;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .faq-container,
+            .contact-info,
+            .contact-form,
+            .quick-contact {
+                padding: 2rem;
+            }
+
+            .faq-question h3 {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            .faq-container,
+            .contact-info,
+            .contact-form,
+            .quick-contact {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Koca Mobil Asansör Logo">
+                KOCA MOBİL ASANSÖR
+            </a>
+            <button class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                <li><a href="hizmetler.html">Hizmetler</a></li>
+                <li><a href="galeri.html">Galeri</a></li>
+                <li><a href="sss-iletisim.html" class="active">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>SSS & İletişim</h1>
+            <p>Merak ettikleriniz ve bizimle iletişim kurmanın en kolay yolları</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            
+            <!-- FAQ Section -->
+            <section class="section">
+                <h2>Sık Sorulan Sorular</h2>
+                <div class="faq-container">
+                    
+                    <div class="faq-item">
+                        <h3>Mobil asansörü saatlik kiralayabilir miyim?</h3>
+                        <p>Evet, mobil asansörlerimizi ihtiyacınıza göre saatlik olarak kiralayabilirsiniz.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Kiralama süresi minimum ne kadar?</h3>
+                        <p>Minimum kiralama süresi genellikle 1 saattir; talebinize göre süreyi uzatabilirsiniz.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Kiralama ücreti nasıl hesaplanır?</h3>
+                        <p>Ücret, saatlik bazda belirlenir. Daha uzun süreli kiralamalarda indirim seçenekleri sunulmaktadır.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Taşınabilecek maksimum ağırlık ve yükseklik nedir?</h3>
+                        <p>Mobil asansörümüz tek seferde maksimum 200 kg yük taşıyabilir ve 33 m (yaklaşık 10. kat) yüksekliğe güvenle ulaşabilir.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Hangi alanlarda kullanabilirim?</h3>
+                        <p>İnşaat, bina, depo, apartman gibi yüksek noktalara yük taşımak veya indirmek istediğiniz her yerde kullanılabilir.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Hava koşulları kiralamayı etkiler mi?</h3>
+                        <p>Aşırı yağmur, rüzgâr veya buzlu zeminlerde kullanım önerilmez. Güvenli kullanım için hava koşullarına dikkat edilmelidir.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Kiralama iptal veya değişiklik yapabilir miyim?</h3>
+                        <p>Evet, rezervasyonunuzdan önce iptal veya değişiklik yapabilirsiniz; detaylar için bizimle iletişime geçmeniz yeterlidir.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Kiralama sırasında güvenlik önlemleri nasıl sağlanıyor?</h3>
+                        <p>Aşırı yük koruması ve denge sistemleri ile güvenli kullanım sağlanır.</p>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Quick Contact -->
+            <section class="quick-contact">
+                <h3>Hemen İletişime Geçin</h3>
+                <p>Mobil asansör kiralama ve fiyat bilgisi için doğrudan ulaşın</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="tel:+905419376459" class="cta-button">
+                        <i class="fas fa-phone"></i> Hemen Ara: 05419376459
+                    </a>
+                    <a href="https://wa.me/905419376459?text=Merhaba, mobil asansör hizmeti hakkında bilgi almak istiyorum." class="cta-button" style="background: #25D366;">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section class="section">
+                <h2>İletişim Bilgileri</h2>
+                <div class="contact-container">
+                    
+                    <!-- Contact Info -->
+                    <div class="contact-info">
+                        <h3>Bizimle İletişime Geçin</h3>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Telefon</h4>
+                                <p>+90 5419376459</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <div>
+                                <h4>WhatsApp</h4>
+                                <p>7/24 Hızlı İletişim</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Adres</h4>
+                                <p>Hizmet Bölgesi: DENİZLİ </p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Çalışma Saatleri</h4>
+                                <p>Her Gün 08:00–22:00</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="contact-form">
+                        <h3>Mesaj Gönder</h3>
+                        <form id="contactForm">
+                            
+                            <div class="form-group">
+                                <label for="name">Ad Soyad *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Telefon *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="service">Hizmet Türü</label>
+                                <select id="service" name="service">
+                                    <option value="">Seçiniz</option>
+                                    <option value="ev-esyasi">Ev/Ofis Eşyası</option>
+                                    <option value="insaat">İnşaat Malzemesi</option>
+                                    <option value="moloz">Moloz İndirme</option>
+                                    <option value="cati">Çatı Malzemeleri</option>
+                                    <option value="diger">Diğer</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Mesajınız *</label>
+                                <textarea id="message" name="message" placeholder="Taşınacak eşyalar, kat bilgisi, tarih vb. detayları belirtiniz..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="form-submit">
+                                <i class="fas fa-paper-plane"></i> Mesaj Gönder
+                            </button>
+
+                        </form>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>İletişim</h3>
+                    <p><i class="fas fa-phone"></i> +90 5419376459</p>
+                    <p><i class="fas fa-map-marker-alt"></i> DENİZLİ </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Hizmetlerimiz</h3>
+                    <a href="hizmetler.html">Ev/Ofis Eşyası Taşıma</a>
+                    <a href="hizmetler.html">İnşaat Malzemesi</a>
+                    <a href="hizmetler.html">Moloz İndirme</a>
+                    <a href="hizmetler.html">Çatı Malzemeleri</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Sosyal Medya</h3>
+                    <a href="https://www.facebook.com/Nakliyecim20/" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+                    <a href="https://www.instagram.com/koca_mobil_asansor/"target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Koca Mobil Asansör. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+            
+            // Create WhatsApp message
+            let whatsappMessage = `Merhaba, mobil asansör hizmeti talep ediyorum.%0A%0A`;
+            whatsappMessage += `👤 Ad Soyad: ${name}%0A`;
+            whatsappMessage += `📞 Telefon: ${phone}%0A`;
+            if (service) whatsappMessage += `🔧 Hizmet: ${service}%0A`;
+            whatsappMessage += `💬 Mesaj: ${message}`;
+            
+            // Open WhatsApp
+            const whatsappURL = `https://wa.me/905419376459?text=${whatsappMessage}`;
+            window.open(whatsappURL, '_blank');
+            
+            // Reset form
+            this.reset();
+            
+            // Show success message
+            alert('Mesajınız WhatsApp ile gönderiliyor...');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'white';
+                header.style.backdropFilter = 'none';
+            }
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navMenu = document.getElementById('navMenu');
+            const menuToggle = document.querySelector('.menu-toggle');
+            
+            if (!navMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // Close mobile menu when clicking on menu links
+document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', function() {
+        const navMenu = document.getElementById('navMenu');
+        navMenu.classList.remove('active');
+    });
+});
+
+        // Animation for elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.faq-container, .contact-info, .contact-form, .quick-contact');
+            animatedElements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(element);
+            });
+        });
+</script>
+</body>
+</html>
+        

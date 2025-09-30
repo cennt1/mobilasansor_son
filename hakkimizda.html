@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Koca Mobil Asansör - Deneyimli ekibimiz, misyon vizyonumuz ve çalışma süreçlerimiz hakkında detaylı bilgi">
+    <meta name="keywords" content="Denizli mobil asansör, asansör kiralama, evden eve asansör, kiralık mobil asansör,koca mobil asansör, hakkımızda, asansör servisi, misyon, vizyon, nasıl çalışır, deneyimli ekip">
+    <title>Hakkımızda - Koca Mobil Asansör</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* CSS Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: #444444;
+            background-color: #F7F7F7;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #0077FF;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #444444;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: #0077FF;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #FF9900;
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after,
+        .nav-menu a.active::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #0077FF;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0077FF 0%, #004CB3 100%);
+            color: white;
+            padding: 150px 0 100px;
+            margin-top: 80px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            min-height: 400px;
+        }
+
+        .hero-text {
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero-text h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            text-align: left;
+        }
+
+        .hero-text p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-image img {
+            max-width: 130%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            transform: translateX(100px);
+            opacity: 0;
+            animation: slideInRight 1s ease-out 0.5s forwards;
+        }
+
+        @keyframes slideInRight {
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .hero-text h1,
+        .hero-text p {
+            transform: translateX(-50px);
+            opacity: 0;
+            animation: slideInLeft 0.8s ease-out forwards;
+        }
+
+        .hero-text p {
+            animation-delay: 0.3s;
+        }
+
+        @keyframes slideInLeft {
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 60px 0;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        .section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #0077FF;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #FF9900;
+            border-radius: 2px;
+        }
+
+        /* Company Introduction */
+        .company-intro {
+            background: white;
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 60px;
+        }
+
+        .intro-content {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .intro-text h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #0077FF;
+            margin-bottom: 1.5rem;
+        }
+
+        .intro-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .intro-image {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #0077FF 0%, #004CB3 100%);
+            border-radius: 15px;
+            color: white;
+        }
+
+        .intro-image i {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .intro-image h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        /* Mission Vision */
+        .mission-vision {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 60px;
+        }
+
+        .mission, .vision {
+            background: white;
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .mission:hover, .vision:hover {
+            transform: translateY(-5px);
+        }
+
+        .mission i, .vision i {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: #FF9900;
+        }
+
+        .mission h3, .vision h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #0077FF;
+            margin-bottom: 1.5rem;
+        }
+
+        .mission p, .vision p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            background: white;
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .step {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 15px;
+            background: #F7F7F7;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .step:hover {
+            background: #0077FF;
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .step::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            background: #FF9900;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .step:nth-child(1)::before { content: '1'; }
+        .step:nth-child(2)::before { content: '2'; }
+        .step:nth-child(3)::before { content: '3'; }
+        .step:nth-child(4)::before { content: '4'; }
+
+        .step i {
+            font-size: 2.5rem;
+            color: #0077FF;
+            margin: 2rem 0 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .step:hover i {
+            color: white;
+        }
+
+        .step h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #0077FF;
+            margin-bottom: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .step:hover h4 {
+            color: white;
+        }
+
+        .step p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Statistics */
+        .stats {
+            background: linear-gradient(135deg, #0077FF 0%, #004CB3 100%);
+            color: white;
+            padding: 60px 0;
+            margin: 60px 0;
+            border-radius: 15px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #FF9900;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: white;
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #FF9900;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 153, 0, 0.3);
+            margin: 0.5rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 153, 0, 0.4);
+        }
+
+        .cta-button[style*="background: #25D366"]:hover {
+            background: #1DA851 !important;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: #444444;
+            color: white;
+            text-align: center;
+            padding: 3rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #0077FF;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .footer-section a:hover {
+            color: #FF9900;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #666;
+            padding-top: 1rem;
+            margin-top: 2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 1rem 0;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .hero-text {
+                order: 1;
+            }
+
+            .hero-image {
+                order: 2;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+                text-align: center;
+            }
+
+            .hero-text p {
+                font-size: 1.1rem;
+                text-align: center;
+            }
+
+            .hero-image img {
+                animation: slideInUp 1s ease-out 0.5s forwards;
+            }
+
+            @keyframes slideInUp {
+                from {
+                    transform: translateY(50px);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+
+            .intro-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .mission-vision {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .steps-container {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .company-intro,
+            .mission,
+            .vision,
+            .how-it-works,
+            .cta-section {
+                padding: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .company-intro,
+            .mission,
+            .vision,
+            .how-it-works,
+            .cta-section {
+                padding: 1.5rem;
+            }
+
+            .hero-content {
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Koca Mobil Asansör Logo">
+                KOCA MOBİL ASANSÖR
+            </a>
+            <button class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="hakkimizda.html" class="active">Hakkımızda</a></li>
+                <li><a href="hizmetler.html">Hizmetler</a></li>
+                <li><a href="galeri.html">Galeri</a></li>
+                <li><a href="sss-iletisim.html">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Hakkımızda</h1>
+                    <p>Denizli'de mobil asansör hizmetinde güvenilir çözüm ortağınız - Yerel hizmet, profesyonel yaklaşım</p>
+                </div>
+                <div class="hero-image">
+                    <img src="abc.png" alt="Koca Mobil Asansör - Hakkımızda">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            
+            <!-- Company Introduction -->
+            <section class="company-intro">
+                <div class="intro-content">
+                    <div class="intro-text">
+                        <h3>Mobil Asansör Hizmetinde Güvenilir Çözüm Ortağınız</h3>
+                        <p>
+                            Koca Mobil Asansör olarak, ağır eşyalarınızın üst katlara güvenli ve kolay bir şekilde 
+                            taşınması konusunda uzmanız. Nakliye firmanız eşyalarınızı getirdiğinde, bizim mobil 
+                            asansörümüzle istediğiniz kata kadar güvenle taşıyoruz.
+                        </p>
+                        <p>
+                            Özellikle yüksek katlı binalarda, dar merdivenli evlerde ve asansörü olmayan 
+                            yapılarda ağır eşya taşımacılığının zorluklarını biliyoruz. Bu nedenle 
+                            profesyonel mobil asansör hizmetimizle size zaman ve emek tasarrufu sağlıyoruz.
+                        </p>
+                        <p>
+                            Deneyimli ekibimiz ve güvenilir ekipmanlarımızla, eşyalarınızın zarar görmeden 
+                            güvenli bir şekilde taşınmasını garanti ediyoruz. Yerel hizmet anlayışımızla 
+                            bölgemizdeki müşterilerimize hızlı ve kaliteli hizmet sunuyoruz.
+                        </p>
+                    </div>
+                    <div class="intro-image">
+                        <i class="fas fa-elevator"></i>
+                        <h4>Mobil Asansör</h4>
+                        <p>Güvenli Taşımacılık</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Statistics -->
+            <section class="stats">
+                <div class="container">
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <h3>Güvenli</h3>
+                            <p>Hasarsız Taşıma</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>Hızlı</h3>
+                            <p>Anında Hizmet</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>Yerel</h3>
+                            <p>Bölgesel Hizmet</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- How It Works -->
+            <section class="section">
+                <h2>Nasıl Çalışır?</h2>
+                <div class="how-it-works">
+                    <div class="steps-container">
+                        <div class="step">
+                            <i class="fas fa-phone-alt"></i>
+                            <h4>Arama & Randevu</h4>
+                            <p>
+                                Bizi arayarak nakliye tarihinizi, 
+                                adresinizi ve taşınacak eşyalarınızı 
+                                bildiriyorsunuz. Hemen randevu planlıyoruz.
+                            </p>
+                        </div>
+                        
+                        <div class="step">
+                            <i class="fas fa-truck"></i>
+                            <h4>Nakliye & Hazırlık</h4>
+                            <p>
+                                Nakliye firmanız eşyalarınızı getirdiğinde, 
+                                mobil asansörümüzü hazır hale getiriyor, 
+                                güvenlik önlemlerini alıyoruz.
+                            </p>
+                        </div>
+                        
+                        <div class="step">
+                            <i class="fas fa-elevator"></i>
+                            <h4>Mobil Asansör ile Taşıma</h4>
+                            <p>
+                                Ağır eşyalarınızı mobil asansörümüze 
+                                yüklüyor ve güvenli bir şekilde 
+                                istediğiniz kata çıkarıyoruz.
+                            </p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="cta-section">
+                <h3 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; color: #0077FF; margin-bottom: 1rem;">
+                    Ağır Eşyalarınızı Güvenle Taşıyalım
+                </h3>
+                <p style="font-size: 1.1rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Nakliye sürecinizde mobil asansör desteği almak için hemen iletişime geçin. 
+                    Ücretsiz fiyat teklifi ve randevu için bizi arayabilirsiniz.
+                </p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+                    <a href="tel:+905419376459" class="cta-button">
+                        <i class="fas fa-phone"></i> Hemen Ara: 05419376459
+                    </a>
+                    <a href="https://wa.me/905419376459?text=Merhaba, mobil asansör hizmeti hakkında bilgi almak istiyorum." class="cta-button" style="background: #25D366;">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>İletişim</h3>
+                    <p><i class="fas fa-phone"></i> +90 5419376459</p>
+                    <p><i class="fas fa-map-marker-alt"></i> DENİZLİ </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Hızlı Linkler</h3>
+                    <a href="hakkimizda.html">Hakkımızda</a>
+                    <a href="hizmetler.html">Hizmetler</a>
+                    <a href="galeri.html">Galeri</a>
+                    <a href="sss-iletisim.html">İletişim</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Sosyal Medya</h3>
+                    <a href="https://www.facebook.com/Nakliyecim20/" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+                    <a href="https://www.instagram.com/koca_mobil_asansor/"target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Koca Mobil Asansör. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'white';
+                header.style.backdropFilter = 'none';
+            }
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navMenu = document.getElementById('navMenu');
+            const menuToggle = document.querySelector('.menu-toggle');
+            
+            if (!navMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+                navMenu.classList.remove('active');
+            }
+        });
+
+        
+
+        // Animation for sections on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.company-intro, .mission, .vision, .step, .stat-item, .cta-section');
+            animatedElements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(element);
+            });
+
+
+    </script>
+</body>
+</html>
