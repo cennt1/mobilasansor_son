@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Koca Mobil Asansör - Deneyimli ekibimiz, misyon vizyonumuz ve çalışma süreçlerimiz hakkında detaylı bilgi">
-    <meta name="keywords" content="koca mobil asansör, hakkımızda, asansör servisi, nasıl çalışır, deneyimli ekip">
+    <meta name="keywords" content="koca mobil asansör, Denizli mobil asansör,Denizli asansör servisi,DENİZLİ,Denizli evden eve asansör, deneyimli ekip">
     <title>Hakkımızda - Koca Mobil Asansör</title>
+    
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
@@ -34,7 +35,7 @@
             padding: 0 20px;
         }
 
-        /* Header & Navigation - Ana sayfayla aynı */
+        /* Header & Navigation */
         header {
             background: white;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -53,7 +54,7 @@
 
         .logo {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             font-weight: 700;
             color: #0077FF;
             text-decoration: none;
@@ -63,8 +64,8 @@
         }
 
         .logo img {
-            width: 100px;
-            height: 100px;
+            width: 40px;
+            height: 40px;
             object-fit: contain;
         }
 
@@ -112,30 +113,87 @@
             cursor: pointer;
         }
 
-        /* Page Header */
-        .page-header {
+        /* Hero Section */
+        .hero {
             background: linear-gradient(135deg, #0077FF 0%, #004CB3 100%);
             color: white;
-            text-align: center;
-            padding: 140px 0 80px;
+            padding: 150px 0 100px;
             margin-top: 80px;
+            overflow: hidden;
+            position: relative;
         }
 
-        .page-header h1 {
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            min-height: 400px;
+        }
+
+        .hero-text {
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero-text h1 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
             text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            text-align: left;
         }
 
-        .page-header p {
-            font-size: 1.2rem;
+        .hero-text p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
             opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto;
+            line-height: 1.6;
+            text-align: left;
         }
 
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-image img {
+            max-width: 130%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            transform: translateX(100px);
+            opacity: 0;
+            animation: slideInRight 1s ease-out 0.5s forwards;
+        }
+
+        @keyframes slideInRight {
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .hero-text h1,
+        .hero-text p {
+            transform: translateX(-50px);
+            opacity: 0;
+            animation: slideInLeft 0.8s ease-out forwards;
+        }
+
+        .hero-text p {
+            animation-delay: 0.3s;
+        }
+
+        @keyframes slideInLeft {
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
 
         /* Main Content */
         .main-content {
@@ -384,23 +442,27 @@
             display: inline-block;
             background: #FF9900;
             color: white;
-            padding: 15px 40px;
+            padding: 15px 30px;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 1rem;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(255, 153, 0, 0.3);
-            margin-top: 2rem;
+            margin: 0.5rem;
         }
 
         .cta-button:hover {
-            background: #E6890A;
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(255, 153, 0, 0.4);
         }
 
-        /* Footer - Ana sayfayla aynı */
+        .cta-button[style*="background: #25D366"]:hover {
+            background: #1DA851 !important;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        /* Footer */
         footer {
             background: #444444;
             color: white;
@@ -441,6 +503,25 @@
         }
 
         /* Responsive Design */
+        @media (max-width: 968px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .intro-content {
+                grid-template-columns: 1fr;
+            }
+
+            .mission-vision {
+                grid-template-columns: 1fr;
+            }
+
+            .steps-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
             .menu-toggle {
                 display: block;
@@ -456,14 +537,73 @@
                 flex-direction: column;
                 padding: 1rem 0;
                 box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                gap: 0;
+            }
+
+            .nav-menu li {
+                padding: 0.5rem 2rem;
             }
 
             .nav-menu.active {
                 display: flex;
             }
 
-            .page-header h1 {
-                font-size: 2.5rem;
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            .logo img {
+                width: 35px;
+                height: 35px;
+            }
+
+            .hero {
+                padding: 120px 0 60px;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                min-height: auto;
+            }
+
+            .hero-text {
+                order: 1;
+            }
+
+            .hero-image {
+                order: 2;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+                text-align: center;
+            }
+
+            .hero-text p {
+                font-size: 1rem;
+                text-align: center;
+                margin-bottom: 1rem;
+            }
+
+            .hero-image img {
+                max-width: 90%;
+                animation: slideInUp 1s ease-out 0.3s forwards;
+            }
+
+            @keyframes slideInUp {
+                from {
+                    transform: translateY(30px);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+
+            .section h2 {
+                font-size: 1.8rem;
             }
 
             .intro-content {
@@ -471,9 +611,21 @@
                 gap: 2rem;
             }
 
+            .intro-text h3 {
+                font-size: 1.5rem;
+            }
+
+            .intro-text p {
+                font-size: 1rem;
+            }
+
             .mission-vision {
                 grid-template-columns: 1fr;
                 gap: 2rem;
+            }
+
+            .mission h3, .vision h3 {
+                font-size: 1.5rem;
             }
 
             .steps-container {
@@ -481,7 +633,16 @@
             }
 
             .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1rem;
+            }
+
+            .stat-item h3 {
+                font-size: 2rem;
+            }
+
+            .stat-item p {
+                font-size: 0.9rem;
             }
 
             .company-intro,
@@ -491,19 +652,63 @@
             .cta-section {
                 padding: 2rem;
             }
+
+            .cta-button {
+                padding: 12px 24px;
+                font-size: 0.9rem;
+                display: block;
+                margin: 0.5rem 0;
+            }
         }
 
         @media (max-width: 480px) {
-            .page-header h1 {
-                font-size: 2rem;
+            .container {
+                padding: 0 15px;
+            }
+
+            .hero {
+                padding: 100px 0 50px;
+            }
+
+            .hero-text h1 {
+                font-size: 1.75rem;
+            }
+
+            .hero-text p {
+                font-size: 0.95rem;
             }
 
             .section h2 {
-                font-size: 2rem;
+                font-size: 1.5rem;
+            }
+
+            .intro-text h3 {
+                font-size: 1.3rem;
+            }
+
+            .mission h3, .vision h3 {
+                font-size: 1.3rem;
+            }
+
+            .mission p, .vision p {
+                font-size: 0.95rem;
+            }
+
+            .step h4 {
+                font-size: 1.1rem;
+            }
+
+            .step p {
+                font-size: 0.9rem;
             }
 
             .stats-grid {
                 grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .stat-item h3 {
+                font-size: 2.5rem;
             }
 
             .company-intro,
@@ -512,6 +717,21 @@
             .how-it-works,
             .cta-section {
                 padding: 1.5rem;
+            }
+
+            .hero-content {
+                gap: 1.5rem;
+            }
+
+            .cta-button {
+                padding: 12px 20px;
+                font-size: 0.85rem;
+                width: 100%;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
             }
         }
     </style>
@@ -537,14 +757,26 @@
         </nav>
     </header>
 
-    <!-- Page Header -->
-    <section class="page-header">
+    <!-- Hero Section -->
+    <section class="hero">
         <div class="container">
-            <h1>Hakkımızda</h1>
-            <p>Mobil asansör hizmetinde güvenilir çözüm ortağınız - Yerel hizmet, profesyonel yaklaşım</p>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Hakkımızda</h1>
+                    <h1>
+  <a href="tel:+905419376459" aria-label="0541 937 6459 ile ara" style="text-decoration:none; color:inherit;">
+    📞0541 937 6459
+  </a>
+</h1>
+
+                    <p>Mobil asansör hizmetinde güvenilir çözüm ortağınız - Yerel hizmet, profesyonel yaklaşım</p>
+                </div>
+                <div class="hero-image">
+                    <img src="abc.png" alt="Koca Mobil Asansör - Hakkımızda">
+                </div>
+            </div>
         </div>
     </section>
-
 
     <!-- Main Content -->
     <main class="main-content">
@@ -566,7 +798,7 @@
                             profesyonel mobil asansör hizmetimizle size zaman ve emek tasarrufu sağlıyoruz.
                         </p>
                         <p>
-                            Eşyalarınızın zarar görmeden 
+                            Deneyimli ekibimiz ve güvenilir ekipmanlarımızla, eşyalarınızın zarar görmeden 
                             güvenli bir şekilde taşınmasını garanti ediyoruz. Yerel hizmet anlayışımızla 
                             bölgemizdeki müşterilerimize hızlı ve kaliteli hizmet sunuyoruz.
                         </p>
@@ -599,6 +831,32 @@
                 </div>
             </section>
 
+            <!-- Mission & Vision -->
+            <section class="section">
+                <h2>Misyon & Vizyon</h2>
+                <div class="mission-vision">
+                    <div class="mission">
+                        <i class="fas fa-target"></i>
+                        <h3>Misyonumuz</h3>
+                        <p>
+                            Ağır eşyalarınızın güvenli bir şekilde üst katlara taşınması konusunda 
+                            profesyonel mobil asansör hizmeti sunmak. Müşterilerimizin nakliye sürecinde 
+                            karşılaştıkları zorlukları en aza indirerek, güvenli, hızlı ve hasarsız 
+                            taşımacılık hizmeti sağlamak temel misyonumuzdur.
+                        </p>
+                    </div>
+                    <div class="vision">
+                        <i class="fas fa-eye"></i>
+                        <h3>Vizyonumuz</h3>
+                        <p>
+                            Bölgemizde mobil asansör hizmeti konusunda ilk akla gelen güvenilir firma olmak. 
+                            Teknolojik gelişmeleri takip ederek, daha güvenli ve etkili taşıma çözümleri 
+                            sunmak. Müşterilerimizin nakliye sürecindeki en büyük destekçisi olarak, 
+                            yerel hizmet kalitesini sürekli artırmak vizyonumuzdur.
+                        </p>
+                    </div>
+                </div>
+            </section>
 
             <!-- How It Works -->
             <section class="section">
@@ -609,7 +867,7 @@
                             <i class="fas fa-phone-alt"></i>
                             <h4>Arama & Randevu</h4>
                             <p>
-                                Bizi arayarak mobil asansör kiralanacak zamanınızı, 
+                                Bizi arayarak nakliye tarihinizi, 
                                 adresinizi ve taşınacak eşyalarınızı 
                                 bildiriyorsunuz. Hemen randevu planlıyoruz.
                             </p>
@@ -619,7 +877,7 @@
                             <i class="fas fa-truck"></i>
                             <h4>Nakliye & Hazırlık</h4>
                             <p>
-                               Siz eşyalarınızı kamyonla getirdiğinizde, 
+                                Nakliye firmanız eşyalarınızı getirdiğinde, 
                                 mobil asansörümüzü hazır hale getiriyor, 
                                 güvenlik önlemlerini alıyoruz.
                             </p>
@@ -631,11 +889,19 @@
                             <p>
                                 Ağır eşyalarınızı mobil asansörümüze 
                                 yüklüyor ve güvenli bir şekilde 
-                                istediğiniz kata çıkarıyoruz, istediğiniz kattan indirip 
-                                taşımayı hızlı ve sorunsuz bir şekilde tamamlıyoruz .
+                                istediğiniz kata çıkarıyoruz.
                             </p>
                         </div>
                         
+                        <div class="step">
+                            <i class="fas fa-home"></i>
+                            <h4>Teslim & Yerleştirme</h4>
+                            <p>
+                                Eşyalarınızı hasarsız bir şekilde 
+                                istediğiniz kata çıkardıktan sonra 
+                                güvenli teslimini sağlıyoruz.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -651,10 +917,10 @@
                 </p>
                 <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
                     <a href="tel:+905419376459" class="cta-button">
-                        <i class="fas fa-phone"></i> Hemen Ara: +905419376459
+                        <i class="fas fa-phone"></i> Hemen Ara: 05419376459
                     </a>
-                    <a href="https://wa.me/+905419376459?text=Merhaba, mobil asansör hizmeti hakkında bilgi almak istiyorum." class="cta-button" style="background: #25D366;">
-                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    <a href="https://wa.me/905419376459?text=Merhaba, mobil asansör hizmeti hakkında bilgi almak istiyorum." class="cta-button" style="background: #25D366;">
+                        <i class="fab fa-whatsapp"></i> WhatsApp 
                     </a>
                 </div>
             </section>
@@ -668,7 +934,12 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>İletişim</h3>
-                    <p><i class="fas fa-phone"></i> +90 5419376459</p>
+                    <p>
+  <a href="tel:+905419376459" style="text-decoration:none; color:inherit;">
+    <i class="fas fa-phone"></i> +90 541 937 64 59
+  </a>
+</p>
+
                     <p><i class="fas fa-map-marker-alt"></i> DENİZLİ </p>
                 </div>
                 
@@ -682,8 +953,8 @@
                 
                 <div class="footer-section">
                     <h3>Sosyal Medya</h3>
-                    <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
-                    <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="https://www.facebook.com/Nakliyecim20/" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+                    <a href="https://www.instagram.com/koca_mobil_asansor/"target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
                 </div>
             </div>
             
@@ -765,17 +1036,19 @@
             const counters = document.querySelectorAll('.stat-item h3');
             const countUp = (element) => {
                 const target = element.textContent.replace(/[^\d]/g, '');
-                const increment = target / 100;
-                let current = 0;
-                const timer = setInterval(() => {
-                    current += increment;
-                    if (current >= target) {
-                        element.textContent = element.textContent.replace(/[\d]+/, target);
-                        clearInterval(timer);
-                    } else {
-                        element.textContent = element.textContent.replace(/[\d]+/, Math.floor(current));
-                    }
-                }, 20);
+                if (target) {
+                    const increment = target / 100;
+                    let current = 0;
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            element.textContent = element.textContent.replace(/[\d]+/, target);
+                            clearInterval(timer);
+                        } else {
+                            element.textContent = element.textContent.replace(/[\d]+/, Math.floor(current));
+                        }
+                    }, 20);
+                }
             };
 
             const statsObserver = new IntersectionObserver((entries) => {
